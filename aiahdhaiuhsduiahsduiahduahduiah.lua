@@ -43,8 +43,8 @@ local ProtectGui = protectgui or (syn and syn.protect_gui) or function() end
 
 local Themes = {
 	Names = {
-		"VYXON292392939283982838927832893283823728372873827372",
-		"VYXON392938238928938283728372837827387283727328728732837287382738273827382738273827382382",
+		"VYXON2",
+		"VYXON",
 		"Dark",
 		"Darker", 
 		"AMOLED",
@@ -63,8 +63,8 @@ local Themes = {
 		"Cloud",
 		"Grape"
 	},
-	VYXON292392939283982838927832893283823728372873827372 = {
-		Name = "VYXON292392939283982838927832893283823728372873827372",
+	VYXON2 = {
+		Name = "VYXON2",
 		Accent = Color3.fromRGB(255, 0, 0), -- Bold red for contrast
 		AcrylicMain = Color3.fromRGB(25, 0, 0), -- Dark red background
 		AcrylicBorder = Color3.fromRGB(255, 255, 255), -- White border
@@ -101,8 +101,8 @@ local Themes = {
 		Hover = Color3.fromRGB(50, 0, 0), -- Hover effect with medium red for better contrast
 		HoverChange = 0.04 -- Slight hover change effect for smooth transitions
 	},		
-	VYXON392938238928938283728372837827387283727328728732837287382738273827382738273827382382 = {
-		Name = "VYXON392938238928938283728372837827387283727328728732837287382738273827382738273827382382",
+	VYXON1 = {
+		Name = "VYXON1",
 		Accent = Color3.fromRGB(255, 0, 0), -- Bold red for contrast
 		AcrylicMain = Color3.fromRGB(10, 0, 0), -- Dark background with a deep red hue
 		AcrylicBorder = Color3.fromRGB(30, 10, 10), -- Slightly lighter red border
@@ -4025,21 +4025,20 @@ ElementsTable.Paragraph = (function()
 		assert(Config.Title, "Paragraph - Missing Title")
 		Config.Content = Config.Content or ""
 
-		local Self = Components.Element(Config.Title, Config.Content, Paragraph.Container, false, Config)
-		Self.Frame.BackgroundTransparency = 0.92
-		Self.Border.Transparency = 0.6
+		local Paragraph = Components.Element(Config.Title, Config.Content, Paragraph.Container, false, Config)
+		Paragraph.Frame.BackgroundTransparency = 0.92
+		Paragraph.Border.Transparency = 0.6
 
-		Self.SetTitle = Self.SetTitle
-		Self.SetDesc = Self.SetDesc
-		Self.Visible = Self.Visible
-		Self.Elements = Self
+		Paragraph.SetTitle = Paragraph.SetTitle
+		Paragraph.SetDesc = Paragraph.SetDesc
+		Paragraph.Visible = Paragraph.Visible
+		Paragraph.Elements = Paragraph
 
-		return Self
+		return Paragraph
 	end
 
 	return Paragraph
 end)()
-
 ElementsTable.Slider = (function()
 	local Element = {}
 	Element.__index = Element
