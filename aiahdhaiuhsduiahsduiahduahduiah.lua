@@ -6840,15 +6840,4 @@ local InterfaceManager = {} do
 end
 
 task.wait(0.1)
-local section = Y.Settings:AddSection("Themes")
-local InterfaceTheme = section:AddDropdown("InterfaceTheme", {
-	Title = "Theme",
-	Description = "Changes the interface theme.",
-	Values = Library.Themes,
-	Default = "",
-	Callback = function(Value)
-		Library:SetTheme(Value)
-		InterfaceManager:SaveSettings()
-	end
-})
 return Library, SaveManager, InterfaceManager, Mobile
