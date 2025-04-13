@@ -103,42 +103,42 @@ local Themes = {
 	},		
 	VYXON1 = {
 		Name = "VYXON1",
-		Accent = Color3.fromRGB(200, 0, 0), -- Slightly toned down red for smoother contrast
-		AcrylicMain = Color3.fromRGB(5, 0, 0), -- Darker background
-		AcrylicBorder = Color3.fromRGB(20, 5, 5),
-		AcrylicGradient = ColorSequence.new(Color3.fromRGB(5, 0, 0), Color3.fromRGB(35, 5, 5)),
+		Accent = Color3.fromRGB(160, 0, 0), -- Darker red for accent
+		AcrylicMain = Color3.fromRGB(2, 0, 0), -- Deep dark background
+		AcrylicBorder = Color3.fromRGB(10, 2, 2),
+		AcrylicGradient = ColorSequence.new(Color3.fromRGB(2, 0, 0), Color3.fromRGB(25, 2, 2)),
 		AcrylicNoise = 1,
-		TitleBarLine = Color3.fromRGB(45, 0, 0),
-		Tab = Color3.fromRGB(45, 0, 0),
-		Element = Color3.fromRGB(15, 0, 0),
-		ElementBorder = Color3.fromRGB(10, 0, 0),
-		InElementBorder = Color3.fromRGB(40, 5, 5),
+		TitleBarLine = Color3.fromRGB(30, 0, 0),
+		Tab = Color3.fromRGB(30, 0, 0),
+		Element = Color3.fromRGB(10, 0, 0),
+		ElementBorder = Color3.fromRGB(5, 0, 0),
+		InElementBorder = Color3.fromRGB(25, 2, 2),
 		ElementTransparency = 0.92,
-		ToggleSlider = Color3.fromRGB(45, 0, 0),
-		ToggleToggled = Color3.fromRGB(220, 0, 0),
-		SliderRail = Color3.fromRGB(45, 0, 0),
-		DropdownFrame = Color3.fromRGB(20, 0, 0),
-		DropdownHolder = Color3.fromRGB(8, 0, 0),
-		DropdownBorder = Color3.fromRGB(12, 0, 0),
-		DropdownOption = Color3.fromRGB(45, 0, 0),
-		Keybind = Color3.fromRGB(45, 0, 0),
-		Input = Color3.fromRGB(45, 0, 0),
-		InputFocused = Color3.fromRGB(15, 0, 0),
-		InputIndicator = Color3.fromRGB(230, 230, 230),
-		InputIndicatorFocus = Color3.fromRGB(220, 0, 0),
-		Dialog = Color3.fromRGB(8, 0, 0),
-		DialogHolder = Color3.fromRGB(15, 5, 5),
-		DialogHolderLine = Color3.fromRGB(30, 10, 10),
-		DialogButton = Color3.fromRGB(20, 5, 5),
-		DialogButtonBorder = Color3.fromRGB(40, 10, 10),
-		DialogBorder = Color3.fromRGB(35, 10, 10),
-		DialogInput = Color3.fromRGB(20, 5, 5),
-		DialogInputLine = Color3.fromRGB(70, 15, 15),
-		Text = Color3.fromRGB(245, 245, 245),
-		SubText = Color3.fromRGB(150, 150, 150),
-		Hover = Color3.fromRGB(50, 0, 0),
+		ToggleSlider = Color3.fromRGB(30, 0, 0),
+		ToggleToggled = Color3.fromRGB(180, 0, 0),
+		SliderRail = Color3.fromRGB(30, 0, 0),
+		DropdownFrame = Color3.fromRGB(10, 0, 0),
+		DropdownHolder = Color3.fromRGB(4, 0, 0),
+		DropdownBorder = Color3.fromRGB(6, 0, 0),
+		DropdownOption = Color3.fromRGB(30, 0, 0),
+		Keybind = Color3.fromRGB(30, 0, 0),
+		Input = Color3.fromRGB(30, 0, 0),
+		InputFocused = Color3.fromRGB(10, 0, 0),
+		InputIndicator = Color3.fromRGB(210, 210, 210),
+		InputIndicatorFocus = Color3.fromRGB(180, 0, 0),
+		Dialog = Color3.fromRGB(4, 0, 0),
+		DialogHolder = Color3.fromRGB(10, 3, 3),
+		DialogHolderLine = Color3.fromRGB(20, 5, 5),
+		DialogButton = Color3.fromRGB(12, 3, 3),
+		DialogButtonBorder = Color3.fromRGB(30, 5, 5),
+		DialogBorder = Color3.fromRGB(25, 5, 5),
+		DialogInput = Color3.fromRGB(12, 3, 3),
+		DialogInputLine = Color3.fromRGB(50, 10, 10),
+		Text = Color3.fromRGB(235, 235, 235),
+		SubText = Color3.fromRGB(130, 130, 130),
+		Hover = Color3.fromRGB(35, 0, 0),
 		HoverChange = 0.035
-	},	
+	},
 	Dark = {
 		Name = "Dark",
 		Accent = Color3.fromRGB(96, 205, 255),
@@ -6249,46 +6249,46 @@ local InterfaceManager = {} do
 
 		InterfaceTheme:SetValue(Settings.Theme)
 
-		-- if Library.UseAcrylic then
-		-- 	section:AddToggle("AcrylicToggle", {
-		-- 		Title = "Acrylic",
-		-- 		Description = "The blurred background requires graphic quality 8+",
-		-- 		Default = Settings.Acrylic,
-		-- 		Callback = function(Value)
-		-- 			Library:ToggleAcrylic(Value)
-		-- 			Settings.Acrylic = Value
-		-- 			InterfaceManager:SaveSettings()
-		-- 		end
-		-- 	})
-		-- end
+		if Library.UseAcrylic then
+			section:AddToggle("AcrylicToggle", {
+				Title = "Acrylic",
+				Description = "The blurred background requires graphic quality 8+",
+				Default = Settings.Acrylic,
+				Callback = function(Value)
+					Library:ToggleAcrylic(Value)
+					Settings.Acrylic = Value
+					InterfaceManager:SaveSettings()
+				end
+			})
+		end
 
-		-- section:AddToggle("TransparentToggle", {
-		-- 	Title = "Transparency",
-		-- 	Description = "Makes the interface transparent.",
-		-- 	Default = Settings.Transparency,
-		-- 	Callback = function(Value)
-		-- 		Library:ToggleTransparency(Value)
-		-- 		Settings.Transparency = Value
-		-- 		InterfaceManager:SaveSettings()
-		-- 	end
-		-- })
+		section:AddToggle("TransparentToggle", {
+			Title = "Transparency",
+			Description = "Makes the interface transparent.",
+			Default = Settings.Transparency,
+			Callback = function(Value)
+				Library:ToggleTransparency(Value)
+				Settings.Transparency = Value
+				InterfaceManager:SaveSettings()
+			end
+		})
 
-		-- section:AddSlider("CooldownDragging", {
-		-- 	Title = "GUI dragging cooldown.",
-		-- 	Default = 5,
-		-- 	Min = 0,
-		-- 	Max = 50,
-		-- 	Rounding = 1,
-		-- 	Callback = function(Value)
-		-- 		CDDrag = Value
-		-- 	end,
-		-- })
+		section:AddSlider("CooldownDragging", {
+			Title = "GUI dragging cooldown.",
+			Default = 5,
+			Min = 0,
+			Max = 50,
+			Rounding = 1,
+			Callback = function(Value)
+				CDDrag = Value
+			end,
+		})
 
-		-- local MenuKeybind = section:AddKeybind("MenuKeybind", { Title = "Minimize Bind", Default = Library.MinimizeKey.Name or Settings.MenuKeybind })
-		-- MenuKeybind:OnChanged(function()
-		-- 	Settings.MenuKeybind = MenuKeybind.Value
-		-- 	InterfaceManager:SaveSettings()
-		-- end)
+		local MenuKeybind = section:AddKeybind("MenuKeybind", { Title = "Minimize Bind", Default = Library.MinimizeKey.Name or Settings.MenuKeybind })
+		MenuKeybind:OnChanged(function()
+			Settings.MenuKeybind = MenuKeybind.Value
+			InterfaceManager:SaveSettings()
+		end)
 		Library.MinimizeKeybind = MenuKeybind
 	end
 end
@@ -6795,49 +6795,50 @@ local InterfaceManager = {} do
 
 		InterfaceTheme:SetValue(Settings.Theme)
 
-		-- if Library.UseAcrylic then
-		-- 	section:AddToggle("AcrylicToggle", {
-		-- 		Title = "Acrylic",
-		-- 		Description = "The blurred background requires graphic quality 8+",
-		-- 		Default = Settings.Acrylic,
-		-- 		Callback = function(Value)
-		-- 			Library:ToggleAcrylic(Value)
-		-- 			Settings.Acrylic = Value
-		-- 			InterfaceManager:SaveSettings()
-		-- 		end
-		-- 	})
-		-- end
+		if Library.UseAcrylic then
+			section:AddToggle("AcrylicToggle", {
+				Title = "Acrylic",
+				Description = "The blurred background requires graphic quality 8+",
+				Default = Settings.Acrylic,
+				Callback = function(Value)
+					Library:ToggleAcrylic(Value)
+					Settings.Acrylic = Value
+					InterfaceManager:SaveSettings()
+				end
+			})
+		end
 
-		-- section:AddToggle("TransparentToggle", {
-		-- 	Title = "Transparency",
-		-- 	Description = "Makes the interface transparent.",
-		-- 	Default = Settings.Transparency,
-		-- 	Callback = function(Value)
-		-- 		Library:ToggleTransparency(Value)
-		-- 		Settings.Transparency = Value
-		-- 		InterfaceManager:SaveSettings()
-		-- 	end
-		-- })
+		section:AddToggle("TransparentToggle", {
+			Title = "Transparency",
+			Description = "Makes the interface transparent.",
+			Default = Settings.Transparency,
+			Callback = function(Value)
+				Library:ToggleTransparency(Value)
+				Settings.Transparency = Value
+				InterfaceManager:SaveSettings()
+			end
+		})
 
-		-- section:AddSlider("CooldownDragging", {
-		-- 	Title = "GUI dragging cooldown",
-		-- 	Default = 1,
-		-- 	Min = 0,
-		-- 	Max = 3,
-		-- 	Rounding = 1.1,
-		-- 	Callback = function(Value)
-		-- 		_G.CDDrag = Value
-		-- 	end
-		-- })
+		section:AddSlider("CooldownDragging", {
+			Title = "GUI dragging cooldown",
+			Default = 1,
+			Min = 0,
+			Max = 3,
+			Rounding = 1.1,
+			Callback = function(Value)
+				_G.CDDrag = Value
+			end
+		})
 
-		-- local MenuKeybind = section:AddKeybind("MenuKeybind", { Title = "Minimize Bind", Default = Settings.MenuKeybind })
-		-- MenuKeybind:OnChanged(function()
-		-- 	Settings.MenuKeybind = MenuKeybind.Value
-		-- 	InterfaceManager:SaveSettings()
-		-- end)
-		-- Library.MinimizeKeybind = MenuKeybind
+		local MenuKeybind = section:AddKeybind("MenuKeybind", { Title = "Minimize Bind", Default = Settings.MenuKeybind })
+		MenuKeybind:OnChanged(function()
+			Settings.MenuKeybind = MenuKeybind.Value
+			InterfaceManager:SaveSettings()
+		end)
+		Library.MinimizeKeybind = MenuKeybind
 	end
 end
 
 task.wait(0.1)
+
 return Library, SaveManager, InterfaceManager, Mobile
