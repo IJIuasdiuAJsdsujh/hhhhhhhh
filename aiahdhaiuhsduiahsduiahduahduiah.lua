@@ -6249,46 +6249,46 @@ local InterfaceManager = {} do
 
 		InterfaceTheme:SetValue(Settings.Theme)
 
-		if Library.UseAcrylic then
-			section:AddToggle("AcrylicToggle", {
-				Title = "Acrylic",
-				Description = "The blurred background requires graphic quality 8+",
-				Default = Settings.Acrylic,
-				Callback = function(Value)
-					Library:ToggleAcrylic(Value)
-					Settings.Acrylic = Value
-					InterfaceManager:SaveSettings()
-				end
-			})
-		end
+		-- if Library.UseAcrylic then
+		-- 	section:AddToggle("AcrylicToggle", {
+		-- 		Title = "Acrylic",
+		-- 		Description = "The blurred background requires graphic quality 8+",
+		-- 		Default = Settings.Acrylic,
+		-- 		Callback = function(Value)
+		-- 			Library:ToggleAcrylic(Value)
+		-- 			Settings.Acrylic = Value
+		-- 			InterfaceManager:SaveSettings()
+		-- 		end
+		-- 	})
+		-- end
 
-		section:AddToggle("TransparentToggle", {
-			Title = "Transparency",
-			Description = "Makes the interface transparent.",
-			Default = Settings.Transparency,
-			Callback = function(Value)
-				Library:ToggleTransparency(Value)
-				Settings.Transparency = Value
-				InterfaceManager:SaveSettings()
-			end
-		})
+		-- section:AddToggle("TransparentToggle", {
+		-- 	Title = "Transparency",
+		-- 	Description = "Makes the interface transparent.",
+		-- 	Default = Settings.Transparency,
+		-- 	Callback = function(Value)
+		-- 		Library:ToggleTransparency(Value)
+		-- 		Settings.Transparency = Value
+		-- 		InterfaceManager:SaveSettings()
+		-- 	end
+		-- })
 
-		section:AddSlider("CooldownDragging", {
-			Title = "GUI dragging cooldown.",
-			Default = 5,
-			Min = 0,
-			Max = 50,
-			Rounding = 1,
-			Callback = function(Value)
-				CDDrag = Value
-			end,
-		})
+		-- section:AddSlider("CooldownDragging", {
+		-- 	Title = "GUI dragging cooldown.",
+		-- 	Default = 5,
+		-- 	Min = 0,
+		-- 	Max = 50,
+		-- 	Rounding = 1,
+		-- 	Callback = function(Value)
+		-- 		CDDrag = Value
+		-- 	end,
+		-- })
 
-		local MenuKeybind = section:AddKeybind("MenuKeybind", { Title = "Minimize Bind", Default = Library.MinimizeKey.Name or Settings.MenuKeybind })
-		MenuKeybind:OnChanged(function()
-			Settings.MenuKeybind = MenuKeybind.Value
-			InterfaceManager:SaveSettings()
-		end)
+		-- local MenuKeybind = section:AddKeybind("MenuKeybind", { Title = "Minimize Bind", Default = Library.MinimizeKey.Name or Settings.MenuKeybind })
+		-- MenuKeybind:OnChanged(function()
+		-- 	Settings.MenuKeybind = MenuKeybind.Value
+		-- 	InterfaceManager:SaveSettings()
+		-- end)
 		Library.MinimizeKeybind = MenuKeybind
 	end
 end
@@ -6795,47 +6795,47 @@ local InterfaceManager = {} do
 
 		InterfaceTheme:SetValue(Settings.Theme)
 
-		if Library.UseAcrylic then
-			section:AddToggle("AcrylicToggle", {
-				Title = "Acrylic",
-				Description = "The blurred background requires graphic quality 8+",
-				Default = Settings.Acrylic,
-				Callback = function(Value)
-					Library:ToggleAcrylic(Value)
-					Settings.Acrylic = Value
-					InterfaceManager:SaveSettings()
-				end
-			})
-		end
+		-- if Library.UseAcrylic then
+		-- 	section:AddToggle("AcrylicToggle", {
+		-- 		Title = "Acrylic",
+		-- 		Description = "The blurred background requires graphic quality 8+",
+		-- 		Default = Settings.Acrylic,
+		-- 		Callback = function(Value)
+		-- 			Library:ToggleAcrylic(Value)
+		-- 			Settings.Acrylic = Value
+		-- 			InterfaceManager:SaveSettings()
+		-- 		end
+		-- 	})
+		-- end
 
-		section:AddToggle("TransparentToggle", {
-			Title = "Transparency",
-			Description = "Makes the interface transparent.",
-			Default = Settings.Transparency,
-			Callback = function(Value)
-				Library:ToggleTransparency(Value)
-				Settings.Transparency = Value
-				InterfaceManager:SaveSettings()
-			end
-		})
+		-- section:AddToggle("TransparentToggle", {
+		-- 	Title = "Transparency",
+		-- 	Description = "Makes the interface transparent.",
+		-- 	Default = Settings.Transparency,
+		-- 	Callback = function(Value)
+		-- 		Library:ToggleTransparency(Value)
+		-- 		Settings.Transparency = Value
+		-- 		InterfaceManager:SaveSettings()
+		-- 	end
+		-- })
 
-		section:AddSlider("CooldownDragging", {
-			Title = "GUI dragging cooldown",
-			Default = 1,
-			Min = 0,
-			Max = 3,
-			Rounding = 1.1,
-			Callback = function(Value)
-				_G.CDDrag = Value
-			end
-		})
+		-- section:AddSlider("CooldownDragging", {
+		-- 	Title = "GUI dragging cooldown",
+		-- 	Default = 1,
+		-- 	Min = 0,
+		-- 	Max = 3,
+		-- 	Rounding = 1.1,
+		-- 	Callback = function(Value)
+		-- 		_G.CDDrag = Value
+		-- 	end
+		-- })
 
-		local MenuKeybind = section:AddKeybind("MenuKeybind", { Title = "Minimize Bind", Default = Settings.MenuKeybind })
-		MenuKeybind:OnChanged(function()
-			Settings.MenuKeybind = MenuKeybind.Value
-			InterfaceManager:SaveSettings()
-		end)
-		Library.MinimizeKeybind = MenuKeybind
+		-- local MenuKeybind = section:AddKeybind("MenuKeybind", { Title = "Minimize Bind", Default = Settings.MenuKeybind })
+		-- MenuKeybind:OnChanged(function()
+		-- 	Settings.MenuKeybind = MenuKeybind.Value
+		-- 	InterfaceManager:SaveSettings()
+		-- end)
+		-- Library.MinimizeKeybind = MenuKeybind
 	end
 end
 
